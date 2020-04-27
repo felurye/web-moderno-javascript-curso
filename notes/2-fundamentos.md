@@ -30,8 +30,7 @@
     
     
   * [let](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/let): 
- ao declarar uma variável com "let", diferentemente da variável var, não é permitido que ela seja redeclarada posteriormente no escopo de um mesmo bloco de código, 
- deste modo, ela pode ser redeclarada, desde que esteja em um outro escopo, como mostrado no exemplo abaixo:
+ ao declarar uma variável com "let", diferentemente da variável "var", só é possível redeclara-lá posteriormente se a mesma estiver em um escopo diferente do bloco de código, como mostra o exemplo abaixo:
   
     ```
     let x = 1;
@@ -41,8 +40,21 @@
       console.log(x);  // Imprime 2
     }
     
-    console.log(x);// Imprime 1
+    console.log(x); // Imprime 1
     ```
-    
+Os valores obtidos do no console são diferentes pois cada um possui seu escopo, onde um não interfere no outro.    
   
   * [const](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/const):
+ao declarar uma variável "const" o seu valor não pode ser alterado, uma vez que isso ocorra, um erro acontecerá. Variáveis "const" são usadas para valores que não tem a necessidade de alteração durante a execução de um código, como, por exemplo:
+  
+  ```
+  function calcularCircunferencia(raio) {
+    const pi = 3.141592653589793;
+    return 2 * pi * raio;
+  }
+
+  console.log(calcularCircunferencia(10)); // Imprime 62.83185307179586
+  ```
+  
+  Ao calcular a circunferência de um círculo, o valor de PI permanece inalterável, deste modo, ele é uma constante.
+  
